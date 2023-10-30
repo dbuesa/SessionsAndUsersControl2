@@ -1,6 +1,5 @@
 <?php
 
-
 function comprovarMailExisteix($mail) {
     require_once 'connexio.php';
     try{
@@ -14,7 +13,7 @@ function comprovarMailExisteix($mail) {
         return false;
     }
     } catch (Exception $e) {
-        
+        echo "Error: " . $e->getMessage();
     }
 }
 
