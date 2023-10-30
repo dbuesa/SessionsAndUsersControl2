@@ -11,6 +11,10 @@ if(!empty($_POST['mail'])){
 }
 
 if(isset($_POST['recuperar'])){
+    require_once '../Model/recuperacioContrasenya.php';
+    if(empty($errors)){
+        enviarMail($mail);
+    }
     
 }
 
