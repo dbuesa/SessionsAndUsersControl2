@@ -10,7 +10,9 @@ if(!empty($_POST['mail'])){
    }
 }
 
-
+if(isset($_POST['recuperar'])){
+    
+}
 
 
 include_once '../Vista/recuperarContr.vista.php'
