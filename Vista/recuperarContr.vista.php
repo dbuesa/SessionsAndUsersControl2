@@ -22,14 +22,14 @@
             <div id="central">
                 <div id="login">
                     <div class="titulo">
-                        Benvingut
+                        Recuperar contrasenya
                     </div>
-                    <form id="loginform" method="POST" action="../Model/login.php">
-                        <input type="text" name="user" placeholder="Usuario" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
+                    <p>Insereix el correu amb el que et vas registrar:</p>
+                    <form id="loginform" method="POST" action="../Controlador/controlarRecuperacioContrasenya.php">
                         
-                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <input type="text" name="mail" placeholder="Correu electrònic" value="<?php echo isset($_POST['mail']) ? $_POST['mail'] : ''; ?>" required/>
                         
-                        <button type="submit" title="Entrar" name="Entrar">Entra</button>
+                        <button type="submit" title="recuperar" name="recuperar">Recuperar contrasenya</button>
                         <div>  
                             <?php
                                 if (!empty($errors)) {
@@ -41,13 +41,7 @@
                                 }
                             ?>
                         </div>
-                    </form>
-                    <div class="pie-form">
-                        <a href="../Controlador/controlarRegistre.php">No tens compte? Registrat</a>
-                    </div>
-                    <div class="pie-form">
-                        <a href="../Controlador/controlarRecuperacioContrasenya.php">Has oblidat la contrasenya? Recupera-la</a>
-                    </div>
+                    </form> 
                 </div>
                 <div class="inferior">
                     <a href="../index.php">Tornar</a>
