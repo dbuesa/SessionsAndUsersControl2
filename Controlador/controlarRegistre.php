@@ -3,11 +3,12 @@
 
 $errors = array();
 
-if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["password2"])){
+if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["password2"])&& !empty($_POST["mail"])){
     require_once '../Model/utils.php';
     $user = netejarData($_POST["username"]);
     $contr1 = netejarData($_POST["password"]);
     $contr2 = netejarData($_POST["password2"]);
+    $mail = netejarData($_POST["mail"]);
 }
 
 
@@ -35,6 +36,15 @@ function comprovarContrasenya($contr1, $contr2){
 function validarContrasenya($contr1){
     $reg = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
     if (preg_match($reg, $contr1)) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function validarMail($mail){
+    $reg = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/";
+    if (preg_match($reg, $mail)) {
         return true;
     }else{
         return false;
@@ -89,6 +99,9 @@ if (isset($_POST['signup_submit'])) {
     }
     if (!existeixUsuari($user)) {
         $errors[] = "L'usuari ja existeix";
+    }
+    if (!validarMail($mail)) {
+        $errors[] = "Insereix un correu electrònic vàlid";
     }
 
     if (empty($errors)) {

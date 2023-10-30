@@ -43,7 +43,10 @@
                         </div>
                     </form>
                     <div class="pie-form">
-                        <a href="../Controlador/controlarRegistre.php">¿No tens compte? Registrat</a>
+                        <a href="../Controlador/controlarRegistre.php">No tens compte? Registrat</a>
+                    </div>
+                    <div class="pie-form">
+                        <a href="../Controlador/controlarRegistre.php">Has oblidat la contrasenya? Recupera-la</a>
                     </div>
                 </div>
                 <div class="inferior">
