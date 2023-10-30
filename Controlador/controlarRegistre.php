@@ -107,7 +107,7 @@ if (isset($_POST['signup_submit'])) {
     if (empty($errors)) {
         require_once '../Model/register.php';
         $contasenya = password_hash($contr1, PASSWORD_DEFAULT);
-        afegirUsuari($user, $contasenya);
+        afegirUsuari($user, $mail, $contasenya);
         echo '<script>alert("Usuari registrat! Ja pots iniciar sessió!");</script>';
         header("refresh:0.01, url=../Model/login.php");
     }}

@@ -7,14 +7,15 @@
  * @param  mixed $contrasenya
  * @return void
  */
-function afegirUsuari($usuari, $contrasenya){
+function afegirUsuari($usuari, $mail, $contrasenya){
     require 'connexio.php';
 
     try{
-    $stmt = $conn->prepare("INSERT INTO usuaris (username, password) VALUES (?, ?)");
+    $stmt = $conn->prepare("INSERT INTO usuaris (username, mail, password) VALUES (?, ?, ?)");
   
     $stmt->bindParam(1, $usuari);
-    $stmt->bindParam(2, $contrasenya);
+    $stmt->bindParam(2, $mail);
+    $stmt->bindParam(3, $contrasenya);
     
     $stmt->execute();
     }catch(PDOException $e){

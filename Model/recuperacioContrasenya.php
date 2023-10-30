@@ -1,35 +1,23 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-
-require './PHPMailer-master/src/Exception.php';             
-require './PHPMailer-master/src/PHPMailer.php';
-require './PHPMailer-master/src/SMTP.php';
-
-
+/**
+ * comprovarMailExisteix comprova si el mail existeix a la base de dades
+ *
+ * @param  mixed $mail mail a comprovar
+ * @return boolean retorna true si existeix i false si no
+ */
 function comprovarMailExisteix($mail) {
     require_once 'connexio.php';
-    try{
-    $stmt = $conn->prepare("SELECT * FROM usuaris WHERE mail = $mail");
+    $stmt = $conn->prepare("SELECT * FROM usuaris WHERE mail = ?");
     $stmt->bindParam(1, $mail);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result) {
-        return true;
-    } else {
+    if($result){
         return false;
-    }
-    } catch (Exception $e) {
-        
+    }else{
+        return true;
     }
 }
-
-
-
-
 
 
 ?>
