@@ -4,6 +4,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+/**
+ * nomUsuari retorna el nom d'usuari a partir del mail de l'usuari 
+ *
+ * @param  mixed $mail mail de l'usuari
+ * @return void
+ */
 function nomUsuari($mail){
     require 'connexio.php';
     try{
@@ -41,6 +47,13 @@ function comprovarMailExisteix($mail) {
 } 
 
 
+/**
+ * guardarToken guarda el token a la base de dades per a poder recuperar la contrasenya més endavant 
+ *
+ * @param  mixed $token token a guardar
+ * @param  mixed $mail mail de l'usuari
+ * @return void 
+ */
 function guardarToken($token, $mail){
   require 'connexio.php';
   try{
@@ -53,12 +66,17 @@ function guardarToken($token, $mail){
   }
 }
 
+/**
+ * enviarMail envia un mail a l'usuari amb un enllaç per a recuperar la contrasenya i guarda el token a la base de dades 
+ *
+ * @param  mixed $email mail de l'usuari
+ * @return void
+ */
 function enviarMail($email){
   
   $token = bin2hex(random_bytes(16));
   $user = nomUsuari($email);
   guardarToken($token, $email);
-
   
   require '../PHPMailer-master/src/Exception.php';             
   require '../PHPMailer-master/src/PHPMailer.php';
@@ -84,13 +102,12 @@ try {
     //Content 
     $mail->isHTML(true);                                         //Set email format to HTML
     $mail->Subject = 'Recuperació de contrasenya';
-    $mail->Body    = "Hola $user, <br><br> Hem rebut una petició per recuperar la contrasenya del teu compte. <br> Clica al següent enllaç per a recuperar-la: <br> <a href='http://localhost/ProjecteFinal/Controlador/controlarRecuperacioContrasenya.php?token=$token'>Recuperar contrasenya</a> <br><br> Si no has estat tu, si us plau, ignora aquest missatge. <br><br> Salutacions, <br> Equip de David Buesa";
+    $mail->Body    = "Hola $user, <br><br> Hem rebut una petició per recuperar la contrasenya del teu compte. <br> Clica al següent enllaç per a recuperar-la: <br> <a href='http://localhost/Pr%C3%A0ctiques%20BackEnd/UF2/Pr%C3%A0ctica5/Controlador/resetContrasenya.php?token=$token'>Recuperar contrasenya</a> <br><br> Si no has estat tu, si us plau, ignora aquest missatge. <br><br> Salutacions, <br> Equip de David Buesa.";
 
     $mail->send();
 } catch (Exception $e) {
   echo "Missatge no enviat. Error : {$mail->ErrorInfo}";
   }
 }
-
 
 ?>
