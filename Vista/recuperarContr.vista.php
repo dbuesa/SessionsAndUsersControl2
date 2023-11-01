@@ -24,7 +24,7 @@
                     <div class="titulo">
                         Recuperar contrasenya
                     </div>
-                    <p>Insereix el correu amb el que et vas registrar:</p>
+                    <p style="color:beige;">Insereix el correu amb el que et vas registrar:</p>
                     <form id="loginform" method="POST" action="../Controlador/controlarRecuperacioContrasenya.php">
                         
                         <input type="text" name="mail" placeholder="Correu electrònic" value="<?php echo isset($_POST['mail']) ? $_POST['mail'] : ''; ?>" required/>
@@ -35,7 +35,7 @@
                                 if (!empty($errors)) {
                                     echo '<ul>';
                                     foreach ($errors as $error) {
-                                        echo '<li>' .  $error . "</li>";
+                                        echo '<li style="color:beige;">' .  $error . "</li>";
                                     }
                                     echo '</ul>';
                                 }

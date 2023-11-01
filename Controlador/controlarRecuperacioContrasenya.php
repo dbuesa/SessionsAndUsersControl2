@@ -10,7 +10,7 @@ if(!empty($_POST['mail'])){
     }else {
         require_once '../Model/recuperarContrasenya.php';
         enviarMail($mail);
-        $errors[] = "Mail enviat";
+        $errors[] = "Revisa el teu correu per recuperar la contrasenya";
     }
 }
 
