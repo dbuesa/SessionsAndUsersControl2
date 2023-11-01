@@ -87,6 +87,21 @@ function existeixUsuari($user){
     }
 }
 
+
+function existeixEmail($mail){
+    require '../Model/connexio.php';
+    $stmt = $conn->prepare("SELECT * FROM usuaris WHERE mail = ?");
+    $stmt->bindParam(1, $mail);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($result){
+        return false;
+    }else{
+        return true;
+    }
+
+}
+
 if (isset($_POST['signup_submit'])) {
     if (!comprovarContrasenya($contr1, $contr2)) {
         $errors[] = "Les contrasenyes no coincideixen";
@@ -102,6 +117,9 @@ if (isset($_POST['signup_submit'])) {
     }
     if (!validarMail($mail)) {
         $errors[] = "Insereix un correu electrònic vàlid";
+    }
+    if (!existeixEmail($mail)) {
+        $errors[] = "El correu electrònic ja existeix";
     }
 
     if (empty($errors)) {
