@@ -61,7 +61,6 @@ if(!empty($_POST["contr1"]) && !empty($_POST["contr2"])){
     require '../Model/novaContrasenya.php';
     insertarTokenExpires($token2, $token);
     $tokenExpires = calcularMinutsToken($token);
-    print_r($tokenExpires);
 }
 
 if(isset($_POST['contrasenya'])){

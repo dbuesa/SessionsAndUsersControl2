@@ -44,7 +44,7 @@ function calcularMinutsToken($token){
 function canviarContrasenya($cont, $token){
     require 'connexio.php';
     try{
-        $stmt = $conn->prepare("UPDATE usuaris SET contrasenya = ? WHERE token = ?");
+        $stmt = $conn->prepare("UPDATE usuaris SET password = ? WHERE token = ?");
         $stmt->bindParam(1, $cont);
         $stmt->bindParam(2, $token);
         $stmt->execute();
