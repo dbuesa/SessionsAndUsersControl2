@@ -60,7 +60,6 @@ function guardarToken($token, $time, $mail){
   $stmt = $conn->prepare("UPDATE usuaris SET token = ?, token_start = ? WHERE mail = ?");
   $stmt->bindParam(1, $token);
   $stmt->bindParam(2, $time);
-  print_r($time);
   $stmt->bindParam(3, $mail);
   $stmt->execute();
   }catch(PDOException $e){

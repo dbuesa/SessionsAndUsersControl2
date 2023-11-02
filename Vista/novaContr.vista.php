@@ -25,7 +25,7 @@
                         Recuperació contrasenya
                     </div>
                     <form id="loginform" method="POST" action="../Controlador/controlarRecuperacioContrasenya.php">
-                        <p style="color: beige;">Insereix la nova contrasenya</p>
+                        <p style="color: beige;">Insereix la nova contrasenya:</p>
                         <input type="text" name="mail" placeholder="Nova contrasenya" required/>
                         <input type="text" name="mail" placeholder="Repeteix la contrasenya" required/>
                         <button type="submit" title="contrasenya" name="contrasenya">Desa</button>
