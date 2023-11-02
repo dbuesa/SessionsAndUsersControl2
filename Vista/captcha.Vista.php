@@ -25,9 +25,9 @@
                         Benvingut
                     </div>
                     <form id="loginform" method="POST" action="../Controlador/controlarCaptcha.php">
-                        <input type="text" name="user" placeholder="Usuario" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
+                        <input type="text" name="user" placeholder="Usuari" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
                         
-                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <input type="password" placeholder="Contrasenya" name="password" required>
                         
                         <div class="g-recaptcha" data-sitekey="6Lf0j-0oAAAAAMOJ4G0s-TurGD276weJcf8mNjcU"></div>
                         <button type="submit" title="Entrar" name="Entrar">Entra</button> 
