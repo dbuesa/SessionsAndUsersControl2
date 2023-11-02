@@ -24,12 +24,14 @@
                     <div class="titulo">
                         Benvingut
                     </div>
-                    <form id="loginform" method="POST" action="../Model/login.php">
+                    <form id="loginform" method="POST" action="../Controlador/controlarCaptcha.php">
                         <input type="text" name="user" placeholder="Usuario" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
                         
                         <input type="password" placeholder="Contraseña" name="password" required>
                         
-                        <button type="submit" title="Entrar" name="Entrar">Entra</button>
+                        <div class="g-recaptcha" data-sitekey="6Lf0j-0oAAAAAMOJ4G0s-TurGD276weJcf8mNjcU"></div>
+                        <button type="submit" title="Entrar" name="Entrar">Entra</button> 
+                        
                         <div>  
                             <?php
                                 if (!empty($errors)) {
