@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../Estils/login.css">
         <style type="text/css"></style>
         <script type="text/javascript"></script>
-        <title>Formulari d'accés</title>
+        <title>Recuperació contrasenya</title>
         
     </head>
     
@@ -24,10 +24,10 @@
                     <div class="titulo">
                         Recuperació contrasenya
                     </div>
-                    <form id="loginform" method="POST" action="../Controlador/controlarRecuperacioContrasenya.php">
+                    <form id="loginform" method="POST" action="../Controlador/controlarResetContrasenya.php">
                         <p style="color: beige;">Insereix la nova contrasenya:</p>
-                        <input type="text" name="mail" placeholder="Nova contrasenya" required/>
-                        <input type="text" name="mail" placeholder="Repeteix la contrasenya" required/>
+                        <input type="password" name="contr1" placeholder="Nova contrasenya" required/>
+                        <input type="password" name="contr2" placeholder="Repeteix la contrasenya" required/>
                         <button type="submit" title="contrasenya" name="contrasenya">Desa</button>
                         <div>  
                             <?php

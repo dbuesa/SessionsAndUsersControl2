@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../Estils/login.css">
         <style type="text/css"></style>
         <script type="text/javascript"></script>
-        <title>Formulari d'accés</title>
+        <title>Recuperació contrasenya</title>
         
     </head>
     
