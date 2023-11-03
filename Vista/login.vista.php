@@ -30,6 +30,10 @@
                         <input type="password" placeholder="Contrasenya" name="password" required>
                         
                         <button type="submit" title="Entrar" name="Entrar">Entra</button>
+                        <div class="google">
+                            <?php require '../autenticacio.php'?>
+                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?>">Iniciar sessió amb Google</a>
+                        </div>
                         <div>  
                             <?php
                                 if (!empty($errors)) {

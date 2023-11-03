@@ -31,9 +31,9 @@
                         <input type="password" name="password2" placeholder="Repeteix la contrasenya" required />
                         
                         <button type="submit" title="Entrar" name="signup_submit">Dona't d'alta</button>
-                        <div>
+                        <div class="google">
                             <?php require '../autenticacio.php'?>
-                            <a href="<?php echo $client->createAuthUrl() ?>">Iniciar sessió amb Google</a>
+                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?>">Registrar-se amb Google</a>
                         </div>
                         <div>  
                             <?php
