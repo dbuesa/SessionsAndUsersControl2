@@ -1,4 +1,6 @@
 <?php
+//David Buesa
+
 $errors = array();
 
 if(!empty($_POST['mail'])){

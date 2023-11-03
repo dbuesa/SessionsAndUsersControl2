@@ -1,4 +1,6 @@
 <?php
+//David Buesa
+
 session_start();
 
 /**

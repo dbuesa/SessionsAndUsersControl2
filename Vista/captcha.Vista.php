@@ -37,7 +37,7 @@
                                 if (!empty($errors)) {
                                     echo '<ul>';
                                     foreach ($errors as $error) {
-                                        echo '<li>' .  $error . "</li>";
+                                        echo '<li style="color:beige;">' .  $error . "</li>";
                                     }
                                     echo '</ul>';
                                 }

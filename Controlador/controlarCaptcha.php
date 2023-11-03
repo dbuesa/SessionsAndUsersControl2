@@ -1,4 +1,5 @@
 <?php
+//David Buesa
 
 $errors = array();
 
@@ -11,8 +12,6 @@ $errors = array();
 
 		if(!verificarUsuari($user)){
 			$errors[] = "L'usuari no existeix";
-		}if(!verificarContrasenya($user, $contrasenya)){
-			$errors[] = "La contrasenya no es correcte";
 		}
 		
 		if(!$captcha){
@@ -21,8 +20,12 @@ $errors = array();
 			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
 			$arr = json_decode($response, TRUE);
 			if($arr['success']){
-				require '../Model/loginCaptcha.php';
-				loginCaptcha($user);
+				if(!verificarContrasenya($user, $contrasenya)){
+					$errors[] = "La contrasenya no es correcte";
+				}else{
+					require '../Model/loginCaptcha.php';
+					loginCaptcha($user);
+				}
 			}
 		}
 	}
