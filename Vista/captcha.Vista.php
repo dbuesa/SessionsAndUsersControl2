@@ -31,6 +31,10 @@
                         
                         <div class="g-recaptcha" data-sitekey="6Lf0j-0oAAAAAMOJ4G0s-TurGD276weJcf8mNjcU"></div>
                         <button type="submit" title="Entrar" name="Entrar">Entra</button> 
+                        <div class="google">
+                            <?php require '../autenticacio.php'?>
+                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?> "> <img src="../Imatges/ui.svg"> Iniciar sessió amb Google</a>
+                        </div>
                         
                         <div>  
                             <?php
