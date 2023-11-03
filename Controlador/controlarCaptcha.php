@@ -9,7 +9,6 @@ $errors = array();
 		$user = netejarData($_POST["user"]);
 		$contrasenya = netejarData($_POST["password"]);
 
-		require '../Model/loginCaptcha.php';
 		if(!verificarUsuari($user)){
 			$errors[] = "L'usuari no existeix";
 		}if(!verificarContrasenya($user, $contrasenya)){
@@ -22,10 +21,60 @@ $errors = array();
 			$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
 			$arr = json_decode($response, TRUE);
 			if($arr['success']){
-				require_once '../Model/loginCaptcha.php';
+				require '../Model/loginCaptcha.php';
 				loginCaptcha($user);
 			}
 		}
 	}
     include_once '../Vista/captcha.Vista.php';
+
+	
+	/**
+ * verificarContrasenya - Funció que comprova si la contrasenya és correcta per a un usuari donat 
+ *
+ * @param  mixed $user  
+ * @param  mixed $contr
+ * @return boolean true si la contrasenya és correcta, false si no ho és
+ */
+function verificarContrasenya($user, $contr){
+    require '../Model/connexio.php';
+    try{
+        $stmt = $conn->prepare("SELECT * FROM usuaris WHERE username = ?");
+        $stmt->bindParam(1, $user);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            if (password_verify($contr, $result['password'])) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+
+/**
+ * verificarUsuari - Funció que comprova si l'usuari existeix a la base de dades 
+ *
+ * @param  mixed $user 
+ * @return boolean  true si l'usuari existeix, false si no existeix
+ */
+function verificarUsuari($user){
+    require '../Model/connexio.php';
+    try{
+        $stmt = $conn->prepare("SELECT * FROM usuaris WHERE username = ?");
+        $stmt->bindParam(1, $user);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
 ?>
