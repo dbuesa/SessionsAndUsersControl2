@@ -13,5 +13,4 @@
   $client->addScope("email");
   $client->addScope("profile");
 
- 
 ?>
