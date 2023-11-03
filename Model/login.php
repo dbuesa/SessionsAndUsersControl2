@@ -30,6 +30,7 @@ function loginUsuari($user, $contrasenya)
 
         if ($result) {
             if (password_verify($contrasenya, $result['password'])) {
+                ini_set('session.gc_maxlifetime', 1500);
                 $_SESSION['username'] = $user;
                 header("Location: ../index.php");
             } else {

@@ -17,6 +17,7 @@ function loginCaptcha($user){
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($result) {
+                ini_set('session.gc_maxlifetime', 1500);
                 $_SESSION['username'] = $user;
                 header("Location: ../index.php");
             }else{

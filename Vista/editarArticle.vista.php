@@ -33,7 +33,7 @@
 				<p style="color:red;">Introdueix l'ID de l'article que desitjes modificar (s'ha de mostrar abans): </p><br>
 			</div>
 			<div class="txa">
-				<input type="number" id="id" name="id" min="1" value="<?php echo isset($_POST['id']) ? $_POST['id'] : ''; ?>" required/><br><br>
+				<input type="number" id="id" name="id" min="1" required/><br><br>
 				<?php
 					if (!empty($errors)) {
 						echo '<ul>';
