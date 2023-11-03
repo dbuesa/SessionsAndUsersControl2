@@ -33,7 +33,7 @@
                         <button type="submit" title="Entrar" name="signup_submit">Dona't d'alta</button>
                         <div class="google">
                             <?php require '../autenticacio.php'?>
-                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?>">Registrar-se amb Google</a>
+                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?>"><img src="../Imatges/ui.svg"> Registrar-se amb Google</a>
                         </div>
                         <div>  
                             <?php

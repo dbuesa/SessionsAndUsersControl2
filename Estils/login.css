@@ -132,15 +132,21 @@ body {
 
 
 .google-login-link {
+    align-items: center;
     display: inline-block;
     padding: 10px 20px;
     background-color: #bbe1fa;
     color: #000000;
     text-decoration: none;
-    border-radius: 5px;
+    width: 85%;
+    border-radius: 2px;
   }
-  
 
+.google-login-image {
+background-color: transparent; /* Fondo transparente para la imagen */
+display: block;
+margin: 0 auto; /* Centra la imagen horizontalmente */
+}
 .google-login-link:hover {
 background-color: #0f4c75;
 color:#bbe1fa;
@@ -148,5 +154,5 @@ color:#bbe1fa;
 
 .google {
 text-align: center; 
-margin: 20px; 
+margin: 10px; 
 }
