@@ -25,9 +25,9 @@
                         Benvingut
                     </div>
                     <form id="loginform" method="POST" action="../Model/login.php">
-                        <input type="text" name="user" placeholder="Usuario" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
+                        <input type="text" name="user" placeholder="Usuari" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
                         
-                        <input type="password" placeholder="Contraseña" name="password" required>
+                        <input type="password" placeholder="Contrasenya" name="password" required>
                         
                         <button type="submit" title="Entrar" name="Entrar">Entra</button>
                         <div>  
@@ -35,7 +35,7 @@
                                 if (!empty($errors)) {
                                     echo '<ul>';
                                     foreach ($errors as $error) {
-                                        echo '<li>' .  $error . "</li>";
+                                        echo '<li style="color:beige;">' .  $error . "</li>";
                                     }
                                     echo '</ul>';
                                 }

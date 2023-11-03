@@ -60,8 +60,10 @@ function loginCaptcha($user){
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($result) {
-            $_SESSION['username'] = $user;
-            header("Location: ../index.php");
+            if(password_verify($password, $result['password'])){
+                $_SESSION['username'] = $user;
+                header("Location: ../index.php");
+            }
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

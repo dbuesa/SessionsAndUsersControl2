@@ -12,7 +12,7 @@ $errors = array();
 		require '../Model/loginCaptcha.php';
 		if(!verificarUsuari($user)){
 			$errors[] = "L'usuari no existeix";
-		}else if(!verificarContrasenya($user, $contrasenya)){
+		}if(!verificarContrasenya($user, $contrasenya)){
 			$errors[] = "La contrasenya no es correcte";
 		}
 		

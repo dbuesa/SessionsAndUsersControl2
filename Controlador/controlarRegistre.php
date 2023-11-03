@@ -131,5 +131,5 @@ if (isset($_POST['signup_submit'])) {
     }}
 
 
-include "../Vista/register.vista.php";
+include "../Vista/register.Vista.php";
 ?>
