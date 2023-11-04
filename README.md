@@ -13,7 +13,7 @@ Si no has estat tu, si us plau, ignora aquest missatge.
 Salutacions,
 Equip de David Buesa.
 
-Es generarà un token alhora que s'envia el correu, i s'afegirà l'hora en què s'ha generat en un camp anomenat token_start a la nostra base de dades. Quan l'usuari entri a l'enllaç, aquest absorbira el seu token i comprovarà l'hora actual. Si han passat més de 240 minuts (4 hores), direm que el seu token haurà expirat, sinó, podrà canviar correctament la seva contrasenya.
+Es generarà un token alhora que s'envia el correu, i s'afegirà l'hora en què s'ha generat en un camp anomenat token_start a la nostra base de dades. Quan l'usuari entri a l'enllaç, aquest absorbira el seu token i comprovarà l'hora actual (i s'afegeix al camp token_expires). Si han passat més de 240 minuts (4 hores), direm que el seu token haurà expirat, sinó, podrà canviar correctament la seva contrasenya.
 
 Si l'usuari s'equivoca més de dues vegades a l'hora d'inserir el nom d'usuari o la seva contrasenya, es redirigirà a una pàgina exactament igual que a la del inici de sessió, però se li afegeix el captcha, el qual no es pot evitar.
 
