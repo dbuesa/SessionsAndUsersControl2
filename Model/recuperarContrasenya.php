@@ -104,7 +104,7 @@ try {
     //Content 
     $mail->isHTML(true);                                         //Set email format to HTML
     $mail->Subject = 'Recuperació de contrasenya';
-    $mail->Body    = "Hola $user, <br><br> Hem rebut una petició per recuperar la contrasenya del teu compte. <br> Clica al següent enllaç per a recuperar-la: <br> <a href='http://localhost/Pr%C3%A0ctiques%20BackEnd/UF2/Pr%C3%A0ctica5/Controlador/controlarResetContrasenya.php?token=$token'>Recuperar contrasenya</a> <br><br> Si no has estat tu, si us plau, ignora aquest missatge. <br><br> Salutacions, <br> Equip de David Buesa.";
+    $mail->Body    = "Hola, $user, <br><br> Hem rebut una petició per recuperar la contrasenya del teu compte. <br> Clica al següent enllaç per a recuperar-la: <br> <a href='http://localhost/Pr%C3%A0ctiques%20BackEnd/UF2/Pr%C3%A0ctica5/Controlador/controlarResetContrasenya.php?token=$token'>Recuperar contrasenya</a> <br><br> Si no has estat tu, si us plau, ignora aquest missatge. <br><br> Salutacions, <br> Equip de David Buesa.";
 
     $mail->send();
 } catch (Exception $e) {
