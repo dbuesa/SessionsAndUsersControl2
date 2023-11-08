@@ -21,7 +21,7 @@ El botó d'"Iniciar sessió amb Google" (fet amb Oauth2) és el mateix tant en e
 
 El procediment amb "Iniciar sessió amb Github" és el mateix però fent servir HybridAuth.
 
-Per tal de diferenciar a l'usuari provinent del Github que el de Google (ja que existeix la casuística de que un mateix correu electrònic es registri des de les dues comptes) s'ha afegit al correu provinent del Github l'extensií ".github" (per exemple: d.buesa@sapalomera.cat.github).
+Per tal de diferenciar a l'usuari provinent del Github del de Google (ja que existeix la casuística que un mateix correu electrònic es registri dels dos comptes) s'ha afegit al correu provinent del Github l'extensió ".github" (per exemple: d.buesa@sapalomera.cat.github).
 
 
 David Buesa Lorente
