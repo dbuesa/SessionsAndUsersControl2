@@ -30,12 +30,7 @@
                         <input type="password" placeholder="Contrasenya" name="password" required>
                         
                         <div class="g-recaptcha" data-sitekey="6Lf0j-0oAAAAAMOJ4G0s-TurGD276weJcf8mNjcU"></div>
-                        <button type="submit" title="Entrar" name="Entrar">Entra</button> 
-                        <div class="google">
-                            <?php require '../autenticacio.php'?>
-                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?> "> <img src="../Imatges/ui.svg"> Iniciar sessió amb Google</a>
-                        </div>
-                        
+                        <button type="submit" title="Entrar" name="Entrar">Entra</button>                        
                         <div>  
                             <?php
                                 if (!empty($errors)) {
@@ -46,6 +41,13 @@
                                     echo '</ul>';
                                 }
                             ?>
+                        </div>
+                        <div class="google">
+                            <?php require '../autenticacio.php'?>
+                            <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?> "> <img src="../Imatges/ui.svg"> Iniciar sessió amb Google</a>
+                        </div>
+                        <div class="google">
+                            <a class="google-login-link" href="../github.php" > <img src="../Imatges/github.png" height="25px"> Iniciar sessió amb Github</a>
                         </div>
                     </form>
                     <div class="pie-form">
