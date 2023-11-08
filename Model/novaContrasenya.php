@@ -41,6 +41,13 @@ function calcularMinutsToken($token){
     }
 }
 
+/**
+ * canviarContrasenya - Funció que canvia la contrasenya de l'usuari que ha oblidat la contrasenya 
+ *
+ * @param  mixed $cont contrasenya que s'ha introduit al formulari
+ * @param  mixed $token token que s'ha passat per la url
+ * @return void
+ */
 function canviarContrasenya($cont, $token){
     require 'connexio.php';
     try{

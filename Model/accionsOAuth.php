@@ -1,5 +1,11 @@
 <?php
 session_start();
+/**
+ * comprovarMail - Comprova si l'usuari que s'està intentant registrar ja existeix a la base de dades (mitjançant el mail) 
+ *
+ * @param  mixed $email - mail de l'usuari que s'està intentant registrar
+ * @return boolean - retorna true si l'usuari ja existeix i false si no existeix
+ */
 function comprovarMail($email){
     require 'connexio.php';
     try{
@@ -17,6 +23,12 @@ function comprovarMail($email){
     }
 }
 
+/**
+ * getUser - Obtenir l'usuari que s'està intentant registrar (mitjançant el mail) 
+ *
+ * @param  mixed $email - mail de l'usuari que s'està intentant registrar 
+ * @return object - retorna l'usuari que s'està intentant registrar 
+ */
 function getUser($email){
     require 'connexio.php';
     try{
@@ -34,6 +46,12 @@ function getUser($email){
     }
 }
 
+/**
+ * login - Iniciar sessió amb l'usuari que s'ha registrat 
+ *
+ * @param  mixed $user - usuari que s'ha registrat 
+ * @return void
+ */
 function login($user){
     require 'connexio.php';
     try{
@@ -51,6 +69,13 @@ function login($user){
     }
 }
 
+/**
+ * afegirUsuari - Afegir l'usuari que s'està intentant registrar a la base de dades 
+ *
+ * @param  mixed $user - usuari que s'està intentant registrar 
+ * @param  mixed $email - mail de l'usuari que s'està intentant registrar
+ * @return void
+ */
 function afegirUsuari($user, $email){
     require 'connexio.php';
     try{

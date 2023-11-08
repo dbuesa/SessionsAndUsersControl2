@@ -42,6 +42,12 @@ function validarContrasenya($contr1){
     }
 }
 
+/**
+ * validarMail - Funció que comprova si el mail és vàlid 
+ *
+ * @param  mixed $mail que s'ha introduit al formulari
+ * @return boolean true si el mail és vàlid, false si no
+ */
 function validarMail($mail){
     $reg = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/";
     if (preg_match($reg, $mail)) {
@@ -88,6 +94,12 @@ function existeixUsuari($user){
 }
 
 
+/**
+ * existeixEmail - Funció que comprova si el mail ja existeix
+ *
+ * @param  mixed $mail que s'ha introduit al formulari
+ * @return boolean true si el mail no existeix, false si existeix
+ */
 function existeixEmail($mail){
     require '../Model/connexio.php';
     $stmt = $conn->prepare("SELECT * FROM usuaris WHERE mail = ?");
