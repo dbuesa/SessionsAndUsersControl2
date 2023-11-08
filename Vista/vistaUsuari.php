@@ -10,6 +10,9 @@
 <body>
 	<header>
 		<div>
+			<div>
+				<p class="username"><?php echo $username ?></p>
+			</div>
 			<form action="Model/tancarConn.php" >
 				<input type="submit" value="Tancar sessió">
 

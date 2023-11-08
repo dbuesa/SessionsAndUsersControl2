@@ -22,9 +22,6 @@ try {
     $email = $userProfile->email;
     
 
-    // print_r($tokens);
-    // print_r($userProfile);
-
     $adapter->disconnect();
 } catch (Exception $e) {
     echo $e->getMessage();

@@ -34,6 +34,8 @@ if(!isset($_SESSION['username'])){
     include 'Vista/index.vista.php';
 
 }else{
+    $username= $_SESSION['username'];
+
     require "Model/articlesUsuari.php";
 
     $articlesPerPagina = intval(articles());

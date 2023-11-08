@@ -8,7 +8,7 @@
 	<title>Editar article</title>
 </head>
 <body>
-	<header>
+<header>
 		<div>
 			<form action="../Model/tancarConn.php" >
 				<input type="submit" value="Tancar sessió">
