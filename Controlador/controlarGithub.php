@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-require '../autenticacio.php';
+require '../github.php';
 require '../Model/utils.php';
 require '../Model/accionsOAuth.php';
 
@@ -8,8 +8,7 @@ $name = netejarData($name);
 $tokenName = bin2hex(random_bytes(6));
 $name .= $tokenName;
 $email = netejarData($email);
-
-
+$email .= ".github";
 
 if(comprovarMail($email)){
     $user = getUser($email);
@@ -21,6 +20,5 @@ if(comprovarMail($email)){
     afegirUsuari($name, $email);
     login($name);
     }
-
 
 ?>

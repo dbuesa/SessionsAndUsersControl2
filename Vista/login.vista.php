@@ -34,6 +34,9 @@
                             <?php require '../autenticacio.php'?>
                             <a class="google-login-link" href="<?php echo $client->createAuthUrl() ?> "> <img src="../Imatges/ui.svg"> Iniciar sessió amb Google</a>
                         </div>
+                        <div class="google">
+                            <a class="google-login-link" href="../github.php" > <img src="../Imatges/github.png" height="25px"> Iniciar sessió amb Github</a>
+                        </div>
                         <div>  
                             <?php
                                 if (!empty($errors)) {

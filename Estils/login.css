@@ -143,9 +143,9 @@ body {
   }
 
 .google-login-image {
-background-color: transparent; /* Fondo transparente para la imagen */
+background-color: transparent; 
 display: block;
-margin: 0 auto; /* Centra la imagen horizontalmente */
+margin: 0 auto;
 }
 .google-login-link:hover {
 background-color: #0f4c75;
