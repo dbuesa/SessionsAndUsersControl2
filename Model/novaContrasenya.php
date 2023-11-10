@@ -1,4 +1,5 @@
 <?php
+//David Buesa
 
 /**
  * insertarTokenExpires - Funció que inserta el token expires a la base de dades per a poder comprovar si el token ha expirat o no

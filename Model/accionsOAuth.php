@@ -1,4 +1,6 @@
 <?php
+//David Buesa
+
 session_start();
 /**
  * comprovarMail - Comprova si l'usuari que s'està intentant registrar ja existeix a la base de dades (mitjançant el mail) 

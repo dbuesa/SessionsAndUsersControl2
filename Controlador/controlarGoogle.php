@@ -1,4 +1,5 @@
 <?php 
+//David Buesa
 
 require '../autenticacio.php';
 require '../Model/utils.php';

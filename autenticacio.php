@@ -1,4 +1,6 @@
 <?php
+//David Buesa
+
   require_once 'configuracio.php';
 
 // authenticate code from Google OAuth Flow

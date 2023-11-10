@@ -1,4 +1,5 @@
 <?php
+//David Buesa
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
