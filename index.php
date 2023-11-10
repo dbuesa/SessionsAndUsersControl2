@@ -3,7 +3,7 @@
 
 session_start();
 
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username'])){ //Si no hi ha sessió iniciada, es redirigeix a la pàgina de login per a que s'inicii sessió o es registri l'usuari 
     require "Model/articles.php";
 
     $articlesPerPagina = intval(articles());
@@ -34,7 +34,7 @@ if(!isset($_SESSION['username'])){
     include 'Vista/index.vista.php';
 
 }else{
-    $username= $_SESSION['username'];
+    $username= $_SESSION['username']; //Si hi ha sessió iniciada, es redirigeix a la pàgina de l'usuari per a que pugui veure els articles que ha creat i pugui crear-ne de nous, modificar o eliminar els que ja té creats.
 
     require "Model/articlesUsuari.php";
 
